@@ -23,3 +23,6 @@ def test_is_weekend():
 
     d2 = date(2024, 11, 20)
     assert is_weekend(d2) is False
+
+def test_incorrect():
+    assert 1 == 2
