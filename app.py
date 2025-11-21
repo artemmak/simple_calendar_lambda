@@ -50,12 +50,14 @@ def index():
     formatted_date = today.strftime("%d.%m.%Y")
     return render_template_string(HTML_TEMPLATE, text=formatted_date)
 
+
 @app.route("/to_new_year")
 def to_new_year():
     today = date.today()
     return render_template_string(
         HTML_TEMPLATE, text=date_utils.count_days_to_new_year(today)
     )
+
 
 @app.route("/days_between")
 def days_between():
@@ -65,6 +67,7 @@ def days_between():
     second_date = datetime.strptime(second_date_str, "%d.%m.%Y").date()
     days_count = date_utils.count_days_between(first_date, second_date)
     return render_template_string(HTML_TEMPLATE, text=days_count)
+
 
 @app.route("/is_weekend")
 def is_weekend():
